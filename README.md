@@ -116,7 +116,9 @@ The following diagram shows all the modules and how each module interact with on
 
 ---
 Thanks for checking out the TMDB Movie App! Don't forget to ⭐ the repository if you find it helpful. 😊
+
 ---
 Made with ❤️ by [Mohamed Ra'afat](https://github.com/Mohamed-Rafat-Safan)
+
 ---
 
