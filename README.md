@@ -15,7 +15,7 @@
   - Favorite Screen to display all movies that is favorite in RoomDb
   - Caching movie in RoomDb
 
-## The skills are used in this application:
+## 💡 Technologies Used::
 - language: Kotlin </br>
 - UI layouts using Jetpack Compose </br>
 - Multi-screen by navigation compose </br>
@@ -95,37 +95,6 @@
 <img src="https://github.com/user-attachments/assets/a2fe95ea-bba2-4b5f-8d73-6fa635b9822b" width="185" height="400" />
 </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Architecture
 The following diagram shows all the modules and how each module interact with one another after. This architecture using a layered software architecture.  <br>
 <p align="center">
@@ -134,13 +103,20 @@ The following diagram shows all the modules and how each module interact with on
 </p>  <br> 
 
 
+## Libraries Used 📚
+- Jetpack Compose: Modern UI toolkit for building native Android UIs.
+- TMDB API: Provides access to movies, and cast information.
+- Retrofit: Type-safe HTTP client for Android and Java.
+- MVI Architecture: Separates UI, business logic, and data management for easy maintainability.
+- Dagger-Hilt: Reduces the boilerplate of manual dependency injection.
+- Paging 3: Handles large data sets by loading content in chunks.
+- Room Database: Local persistence for saving favorite movies.
+- Navigation Compose: Handles app navigation in a declarative way.
+- Coil: To load image from server to UI.
 
-
-
-
-
-
-
-
-
+---
+Thanks for checking out the TMDB Movie App! Don't forget to ⭐ the repository if you find it helpful. 😊
+---
+Made with ❤️ by [Mohamed Ra'afat](https://github.com/Mohamed-Rafat-Safan)
+---
 
