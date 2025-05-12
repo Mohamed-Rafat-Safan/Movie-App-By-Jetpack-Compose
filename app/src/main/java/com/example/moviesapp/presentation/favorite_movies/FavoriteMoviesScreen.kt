@@ -1,5 +1,6 @@
 package com.example.moviesapp.presentation.favorite_movies
 
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -48,25 +49,28 @@ fun FavoriteMoviesScreen(
             )
         }
 
-        when (val response = state.favoriteMovies) {
-            is UiState.Loading -> {
-                CircularProgressIndicator(
-                    modifier = Modifier.align(Alignment.Center)
-                )
-            }
-            is UiState.Success -> {
-                response.data?.let { favoriteMovies ->
-                    FavoriteMoviesList(
-                        favoriteMovies = favoriteMovies,
-                        onMovieClick = { movie ->
-                            navigateToDetails(movie)
-                        }
+        if (state.favoriteMoviesFound) {
+            when (val response = state.favoriteMovies) {
+                is UiState.Loading -> {
+                    CircularProgressIndicator(
+                        modifier = Modifier.align(Alignment.Center)
                     )
                 }
-            }
-            is UiState.Error -> {
-                val errorMessage = (state.favoriteMovies as UiState.Error).message
-                Toast.makeText(LocalContext.current, errorMessage, Toast.LENGTH_SHORT).show()
+                is UiState.Success -> {
+                    response.data?.let { favoriteMovies ->
+                        Log.d("FavoriteMoviesScreen", "Favorite movies: ${favoriteMovies.size}")
+                        FavoriteMoviesList(
+                            favoriteMovies = favoriteMovies,
+                            onMovieClick = { movie ->
+                                navigateToDetails(movie)
+                            }
+                        )
+                    }
+                }
+                is UiState.Error -> {
+                    val errorMessage = (state.favoriteMovies as UiState.Error).message
+                    Toast.makeText(LocalContext.current, errorMessage, Toast.LENGTH_SHORT).show()
+                }
             }
         }
 

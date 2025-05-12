@@ -1,6 +1,5 @@
 package com.example.moviesapp.presentation.favorite_movies
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.moviesapp.domain.repository.MoviesRepository

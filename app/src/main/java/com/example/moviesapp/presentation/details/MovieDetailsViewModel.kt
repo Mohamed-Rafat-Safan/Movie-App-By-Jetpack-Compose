@@ -3,7 +3,6 @@ package com.example.moviesapp.presentation.details
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.moviesapp.data.mapper.toMovieEntity
 import com.example.moviesapp.domain.model.Movie
 import com.example.moviesapp.domain.repository.MoviesRepository
 import com.example.moviesapp.domain.usecase.MovieUseCase
