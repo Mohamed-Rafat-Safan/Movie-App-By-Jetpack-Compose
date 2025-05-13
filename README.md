@@ -1,4 +1,4 @@
-# Movieس App By Jetpack Compose
+# Movies App By Jetpack Compose
 
 - The Movie App is an Android app built using modern tech like Jetpack Compose, TMDB API, Retrofit, and MVI with clean architecture by layer (data - domain - presentation).
   
