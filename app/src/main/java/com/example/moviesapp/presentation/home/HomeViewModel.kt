@@ -12,6 +12,7 @@ import com.example.moviesapp.utils.Constant.TOP_RATED
 import com.example.moviesapp.utils.Constant.UPCOMING
 import com.example.moviesapp.utils.UiState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -26,7 +27,6 @@ class HomeViewModel @Inject constructor(
 
     private val _uiState = MutableStateFlow(HomeState())
     val uiState: StateFlow<HomeState> = _uiState
-
 
     fun handleIntent(intent: HomeIntent) {
         when (intent) {
@@ -48,7 +48,7 @@ class HomeViewModel @Inject constructor(
                     _uiState.update { it.copy(trendingMovies = UiState.Success(trendingMoviesList)) }
                 }
             } catch (e: Exception) {
-                Log.d("TrendingMoviesError", "getTrendingMovies: ${e.toString()}")
+//                Log.d("TrendingMoviesError", "getTrendingMovies: ${e.toString()}")
                 _uiState.update { it.copy(trendingMovies = UiState.Error(e.message.toString())) }
             }
         }
@@ -61,6 +61,7 @@ class HomeViewModel @Inject constructor(
                 val popularMovies =
                     movieUseCase.getMoviesByCategory(POPULAR).cachedIn(viewModelScope)
                 _uiState.update { it.copy(popularMovies = UiState.Success(popularMovies)) }
+
             } catch (e: Exception) {
                 _uiState.update { it.copy(popularMovies = UiState.Error(e.message.toString())) }
             }

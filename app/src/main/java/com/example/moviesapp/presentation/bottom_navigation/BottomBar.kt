@@ -35,9 +35,6 @@ fun BottomBar(
                         Icon(
                             imageVector = item.icon,
                             contentDescription = null,
-                            modifier = Modifier
-                                .padding(2.dp)
-                                .size(26.dp),
                         )
                     }
                 },

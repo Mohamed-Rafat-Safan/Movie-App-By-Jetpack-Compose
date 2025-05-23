@@ -32,6 +32,7 @@ import com.example.moviesapp.R
 import com.example.moviesapp.domain.model.Movie
 import com.example.moviesapp.presentation.bottom_navigation.BottomBar
 import com.example.moviesapp.presentation.bottom_navigation.BottomNavItem
+import com.example.moviesapp.presentation.common.HideNavigationBarOnly
 import com.example.moviesapp.presentation.details.MovieDetailsScreen
 import com.example.moviesapp.presentation.details.MovieDetailsViewModel
 import com.example.moviesapp.presentation.favorite_movies.FavoriteMovieViewModel
@@ -70,6 +71,10 @@ fun ContentNavGraph() {
                 backStackState?.destination?.route == Screen.SearchScreen.route ||
                 backStackState?.destination?.route == Screen.FavoriteMoviesScreen.route
     }
+
+
+    // Hide navigation bar
+    HideNavigationBarOnly()
 
 
     Scaffold(

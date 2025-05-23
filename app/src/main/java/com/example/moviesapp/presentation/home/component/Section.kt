@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun Section(title: String, content: @Composable () -> Unit) {
+inline fun Section(title: String, content: @Composable () -> Unit) {
     Column {
         Text(text = title,
             style = TextStyle(

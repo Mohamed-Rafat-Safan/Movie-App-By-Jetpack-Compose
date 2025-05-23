@@ -50,11 +50,11 @@ fun SplashScreen(navController: NavHostController) {
     // AnimationEffect
     LaunchedEffect(key1 = true) {
         scale.animateTo(
-            targetValue = 0.8f,
+            targetValue = 0.7f,
             animationSpec = tween(
                 durationMillis = 800,
                 easing = {
-                    OvershootInterpolator(4f).getInterpolation(it)
+                    OvershootInterpolator(3f).getInterpolation(it)
                 })
         )
         progress = 1f
@@ -124,7 +124,7 @@ fun AnimatedProgressBar(progress: Float, animationDuration: Int) {
         color = colorResource(id = R.color.blue),//progress Color
         trackColor = tertiaryDarkMediumContrast,//
         modifier = Modifier
-            .height(18.dp)
+            .height(16.dp)
             .padding(horizontal = 4.dp)
             .fillMaxWidth()
             .clip(RoundedCornerShape(50))

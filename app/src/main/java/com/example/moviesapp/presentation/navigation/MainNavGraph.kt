@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.moviesapp.presentation.common.HideNavigationBarOnly
 import com.example.moviesapp.presentation.intro.IntroScreen
 import com.example.moviesapp.presentation.intro.SplashScreen
 
@@ -11,6 +12,9 @@ import com.example.moviesapp.presentation.intro.SplashScreen
 @Composable
 fun MainNavGraph() {
     val navController = rememberNavController()
+
+    // Hide navigation bar
+    HideNavigationBarOnly()
 
     NavHost(
         navController = navController,

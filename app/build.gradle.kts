@@ -43,6 +43,15 @@ android {
     buildFeatures {
         compose = true
     }
+
+    packagingOptions {
+        resources {
+            excludes += listOf(
+                "META-INF/LICENSE.md",
+                "META-INF/LICENSE-notice.md"
+            )
+        }
+    }
 }
 
 dependencies {
@@ -55,7 +64,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.core.ktx)
     testImplementation(libs.junit)
+    testImplementation(libs.androidx.room.runtime.android)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -70,6 +81,9 @@ dependencies {
     implementation("androidx.room:room-ktx:2.7.0")
     kapt("androidx.room:room-compiler:2.7.0")
     implementation("androidx.room:room-paging:2.7.0")
+    testImplementation ("androidx.room:room-testing:2.7.1")
+    androidTestImplementation ("androidx.room:room-testing:2.7.1")
+
 
     // Dagger - Hilt
     implementation("com.google.dagger:hilt-android:2.51.1")
@@ -99,4 +113,19 @@ dependencies {
 
     // system UI Controller
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.27.0")
+
+
+    // Unit test dependencies
+    testImplementation(libs.mockk) // Check for latest version
+
+    // For coroutine support
+    testImplementation(libs.kotlinx.coroutines.test)
+
+    // For Android instrumented tests (if needed)
+    androidTestImplementation(libs.mockk.android)
+//    testImplementation(kotlin("test"))
+
+    // For Turbine (if needed)
+    testImplementation("app.cash.turbine:turbine:1.2.0")
+    androidTestImplementation("app.cash.turbine:turbine:1.2.0")
 }

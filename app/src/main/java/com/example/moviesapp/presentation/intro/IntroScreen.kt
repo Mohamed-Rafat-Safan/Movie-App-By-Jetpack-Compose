@@ -80,7 +80,6 @@ fun FooterSection(onClickGoStart: () -> Unit) {
         Button(
             onClick = { onClickGoStart() },
             modifier = Modifier
-                .padding(top = 8.dp)
                 .size(200.dp, 50.dp)
                 .align(Alignment.TopCenter)
                 ,
