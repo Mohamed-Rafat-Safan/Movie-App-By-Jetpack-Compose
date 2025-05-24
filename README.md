@@ -29,7 +29,9 @@
 - Flow </br>
 - Room Database </br>
 - Dependency injection by (Dagger Hilt) </br>
-- Coroutines for asynchronous </br> </br>
+- Coroutines for asynchronous </br>
+- Unit Testing  </br>
+- Mocking (mockk)  </br>
 
 
 ## Images this application : <br>
